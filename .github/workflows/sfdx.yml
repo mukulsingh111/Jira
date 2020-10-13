@@ -1,5 +1,5 @@
 #.github/workflows/sfdx.yml
-name: Scratch org for review
+name: sfdx WF
 on: [push]
 
 jobs:
