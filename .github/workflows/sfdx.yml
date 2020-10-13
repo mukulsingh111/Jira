@@ -1,6 +1,6 @@
 #.github/workflows/sfdx.yml
 name: sfdx WF
-on: [push]
+on: [xx]
 
 jobs:
   build:
