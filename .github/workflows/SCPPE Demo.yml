@@ -1,6 +1,6 @@
 # SCPPE Demo - pull request 
 name: SCPPE CI Demo - Pull Request
-on: xx
+on: push
 
 jobs:
   build:
