@@ -1,4 +1,5 @@
 name: CI
+       # node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwtkeyfile server.key --username ${{ secrets.SALESFORCE_DEVHUB_USERNAME}} --setdefaultdevhubusername -a devhub
 
 on: push
 
@@ -16,7 +17,6 @@ jobs:
       run: |
         echo "${SALESFORCE_JWT_SECRET_KEY}" > server.key
         node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid 3MVG9dZJodJWITSsDJFFP3JhlZQzQfRnJLfd8bBpIH0SMhnH5kme31ypafpK9fAZLV9lnExEZkfxlG907J4yi  --jwtkeyfile 2382465898490184988  --username msingh@demoorg.com  --setdefaultdevhubusername -a devhub
-       # node_modules/sfdx-cli/bin/run force:auth:jwt:grant --clientid ${{ secrets.SALESFORCE_CONSUMER_KEY }} --jwtkeyfile server.key --username ${{ secrets.SALESFORCE_DEVHUB_USERNAME}} --setdefaultdevhubusername -a devhub
     - name: Create Scratch Org
       run: node_modules/sfdx-cli/bin/run force:org:create --targetdevhubusername devhub --setdefaultusername --definitionfile config/project-scratch-def.json --setalias ciorg --durationdays 1
     - name: Deploy source
